@@ -2,6 +2,8 @@ const yearEl = document.getElementById("year");
 const themeSwitcher = document.getElementById("theme-switcher");
 const menuBtn = document.getElementById("menu-btn");
 const sidebar = document.querySelector(".sidebar");
+const homeBtn = document.getElementById("home-btn");
+const aboutBtn = document.getElementById("about-btn");
 
 const date = new Date();
 const year = date.getFullYear();
@@ -22,4 +24,20 @@ menuBtn.onclick = () => {
   sidebar.classList.contains("sidebar-open")
     ? sidebar.classList.remove("sidebar-open")
     : sidebar.classList.add("sidebar-open");
+};
+
+homeBtn.onclick = () => {
+  window.location.href = "#home";
+  sidebar.classList.remove("sidebar-open");
+};
+
+aboutBtn.onclick = () => {
+  window.location.href = "#about";
+  sidebar.classList.remove("sidebar-open");
+};
+
+window.onclick = (e) => {
+  if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+    sidebar.classList.remove("sidebar-open");
+  }
 };

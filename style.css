@@ -1,19 +1,19 @@
 :root {
-  --background: #ffffff;
+  --background: honeydew;
   --text: #1d1a05;
   --red: #ca3c25;
   --green: #7fb069;
   --caramel: #e6aa68;
   --chiffon: #fffbbd;
-  --transparent: rgba(255, 255, 255, 0.5);
+  --transparent: rgba(0, 0, 0, 0.5);
   --sidebar-width: 50vw;
   --sidebar-lg: 20vw;
 }
 
 .dark {
   --background: #1d1a05;
-  --text: #ffffff;
-  --transparent: rgba(0, 0, 0, 0.5);
+  --text: honeydew;
+  --transparent: rgba(255, 255, 255, 0.5);
 }
 
 * {
@@ -23,6 +23,7 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-user-select: none;
   user-select: none;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -30,6 +31,12 @@ body {
   background-color: var(--background);
   color: var(--text);
   display: flex;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 header {
@@ -71,8 +78,7 @@ header nav button:hover {
 }
 
 main {
-  padding-top: calc(10vh + 10px) !important;
-  padding: 20px;
+  padding-top: calc(10vh) !important;
 }
 
 footer {
@@ -80,7 +86,6 @@ footer {
   justify-content: center;
   padding: 20px 0;
   border-top: 2px solid var(--text);
-  margin-top: 20px;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -99,8 +104,9 @@ footer {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: var(--caramel);
+  background-color: var(--background);
   width: var(--sidebar-width);
+  border-right: 2px solid var(--text);
   z-index: 9999;
   transform: translateX(calc(var(--sidebar-width) * -1));
   transition: transform 1s ease;
@@ -120,7 +126,6 @@ footer {
     width: var(--sidebar-lg);
     top: 0;
     left: 0;
-    border-right: 2px solid var(--text);
     transform: translateX(0);
     transition: none;
     z-index: 999;
@@ -135,7 +140,7 @@ footer {
 }
 
 .sidebar h1 {
-  color: var(--background);
+  color: var(--text);
 }
 
 .sidebar hr {
@@ -154,7 +159,6 @@ footer {
   margin-bottom: 10px;
 }
 
-
 #sidebar-nav button {
   padding: 10px;
   font-size: 1.2rem;
@@ -172,4 +176,78 @@ footer {
 
 #sidebar-nav button:hover {
   background-color: var(--transparent);
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("https://wallpapercave.com/wp/wp2939697.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+
+#hero .hero-holder {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  gap: 50px;
+}
+
+#hero h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.cta-btns {
+  width: 70%;
+  display: flex;
+  gap: 10px;
+}
+
+#hero button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px;
+  flex: 1;
+  cursor: pointer;
+  background-color: var(--background);
+  color: var(--text);
+  border: none;
+  border-radius: 10px;
+}
+
+#hero button:last-child {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+#hero p {
+  text-align: center;
+}
+
+#hero button:hover {
+  transform: scale(1.05);
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
 }
